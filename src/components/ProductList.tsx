@@ -38,7 +38,7 @@ export default function ProductList() {
             className="w-full h-48 object-cover rounded-md"
           />
           <h3 className="mt-2 text-lg font-semibold">{product.name}</h3>
-          <p className="text-gray-600">
+          <p className="product-price">
             R$ {product.price.toFixed(2)}
           </p>
           <button

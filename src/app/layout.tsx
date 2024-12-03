@@ -3,6 +3,7 @@ import { CartProvider } from '@/contexts/CartContext'
 
 // Importa o arquivo global de estilos CSS
 import "./globals.css"
+import { ThemeProvider } from './ThemeContex'
 
 // Define o layout principal da aplicação
 export default function RootLayout({
@@ -11,13 +12,13 @@ export default function RootLayout({
   children: React.ReactNode // Define o tipo dos filhos como React.ReactNode, ou seja, qualquer elemento React válido
 }) {
   return (
-    // Define a estrutura HTML inicial da página
-    <html lang="en"> {/* Define o idioma da página como inglês */}
+    <html lang="en">
       <body>
-        {/* Envolve o conteúdo da página com o CartProvider */}
+      <ThemeProvider>
         <CartProvider>
-          {children} {/* Renderiza os componentes filhos passados para este layout */}
+          {children}
         </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
